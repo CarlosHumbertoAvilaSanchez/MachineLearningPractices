@@ -1,0 +1,56 @@
+---
+
+import { getCollection, render } from "astro:content";
+import Cover from "../../components/Cover.astro";
+import Layout from "../../layouts/Layout.astro";
+
+export async function getStaticPaths(){
+    const activities = await getCollection("activities");
+
+    return activities.map((activity)=>({
+        params: {id: activity.slug},
+        props: { activity }
+    }))
+}
+
+const { activity } = Astro.props;
+const { data } = activity;
+const { fileName, title, student, school, subject, teacher, classSection } = data;
+
+const { Content } = await render(activity);
+---
+
+<Layout title={title}>
+    <div class="cover">
+        <Cover 
+            title={title} 
+            school={school} 
+            subject={subject}
+            teacher={teacher}
+            student={student}
+            classSection={classSection}
+        />
+    </div>
+    <section class="report">
+        <Content>
+    </section>
+</Layout>
+
+<style>
+    section{
+        font-family: var(--font-family);
+        padding: 0 2rem;
+    }
+    .cover{
+        display: none;
+    }
+    @media print{
+        .cover{
+            display: block;
+            height: 100%;
+        }
+        section{
+            text-align: justify;
+        }
+    }
+</style>
