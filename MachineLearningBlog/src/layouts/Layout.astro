@@ -1,5 +1,5 @@
 ---
-import { getCollection } from 'astro:content';
+import { getCollection } from "astro:content";
 interface Props {
   title: string;
 }
@@ -15,9 +15,12 @@ const { title } = Astro.props;
     <meta name="description" content="A Machine Learning blog" />
     <meta name="viewport" content="width=device-width" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      rel="stylesheet"
+    />
     <meta name="generator" content={Astro.generator} />
     <title>{title}</title>
   </head>
@@ -32,12 +35,13 @@ const { title } = Astro.props;
             {
               activities.map((activity) => (
                 <li>
-                  <a href={`/activities/${activity.slug}`}>{activity.data.title}</a>
+                  <a href={`/activities/${activity.slug}`}>
+                    {activity.data.title}
+                  </a>
                 </li>
               ))
             }
           </ul>
-          
         </nav>
       </header>
       <slot />
@@ -46,109 +50,111 @@ const { title } = Astro.props;
 </html>
 <style is:global>
   body {
-        margin: 0;
-        padding: 0;
-        font-family: Arial, sans-serif;
-        background-color: #333;
-        color: white;
-        padding: 2rem 2rem 0 2rem;
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background-color: #333;
+    color: white;
+    padding: 2rem 2rem 0 2rem;
   }
-  @media print{
-    body{
+  @media print {
+    body {
       padding: 1rem;
     }
   }
   :root {
-    --font-family: 'Poppins', sans-serif;
+    --font-family: "Poppins", sans-serif;
   }
   * {
     box-sizing: border-box;
   }
-  a{
+  a {
     text-decoration: none;
     color: white;
   }
-  ul{
+  ul {
     list-style: none;
     padding: 0;
     margin: 0;
   }
-  
-  pre{
+
+  pre {
     padding: 1rem;
     border-radius: 5px;
   }
-  code{
+  code {
     font-size: 1rem;
   }
-  .report h3{
+  .report h3 {
     margin-top: 3rem;
   }
-  .report ol{
+  .report ol {
     padding: 0 2rem;
     margin-top: 2rem;
   }
-  .charts{
+  .charts {
     display: flex;
+    flex-wrap: wrap;
     justify-content: space-around;
   }
-  .charts div{
+  .charts div {
     display: flex;
     flex-direction: column;
     gap: 1rem;
     align-items: center;
   }
-  .charts img{
+  .charts img {
     width: 300px;
     height: 200px;
   }
-  .screenshot{
+  .screenshot {
     margin-top: 3rem;
     display: flex;
+    flex-direction: column;
     justify-content: center;
+    align-items: center;
     gap: 1rem;
   }
-  .screenshot div{
+  .screenshot div {
     display: flex;
     flex-direction: column;
     align-items: center;
     gap: 1rem;
   }
-  .screenshot img{
+  .screenshot img {
     width: 300px;
     height: 100px;
   }
-
 </style>
 
 <style>
-  #app{
+  #app {
     display: flex;
 
     display: grid;
-    grid-template-areas: 
+    grid-template-areas:
       "header main main"
       "header main main";
     grid-template-columns: 200px 3fr;
     gap: 1rem;
   }
-  header{
+  header {
     grid-area: header;
     height: fit-content;
     position: sticky;
     top: 2rem;
   }
-  ul{
+  ul {
     display: flex;
     flex-direction: column;
     gap: 1rem;
   }
-  
-  @media print{
-    header{
+
+  @media print {
+    header {
       display: none;
     }
-    #app{
+    #app {
       display: block;
     }
   }

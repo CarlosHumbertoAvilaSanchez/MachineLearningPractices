@@ -3,102 +3,104 @@ interface Props {
   title: string;
   school: string;
   subject: string;
-teacher: string;
-student: string;
-classSection: string;
+  teacher: string;
+  student: string;
+  classSection: string;
 }
 
-const { title, school, subject, teacher, student, classSection} = Astro.props;
+const { title, school, subject, teacher, student, classSection } = Astro.props;
 ---
 
 <section>
-   
-    <header>
-        <div class="date">
-            <h2>2024</h2>
-            <p>28 de septiembre</p>
-        </div>
-        <img src="../images/UDG-LOGO.svg" alt="Escudo de la universidad de Guadalajara">
-    </header>
-    <main>
-        <article class="title">
-            <h1>
-                {subject}  
-            </h1>
-            <p class="subtitle">{title}</p>
-        </article>
-        <article class="basic-info">
-            <h3>{school}</h3>
-            <p>Profesor: {teacher}</p>
-            <p>Alumno: {student}</p>
-            <p>{classSection}</p>
-        </article>
-    </main>
+  <header>
+    <div class="date">
+      <h2>2024</h2>
+      <p>13 de octubre</p>
+    </div>
+    <img
+      src="../images/UDG-LOGO.svg"
+      alt="Escudo de la universidad de Guadalajara"
+    />
+  </header>
+  <main>
+    <article class="title">
+      <h1>
+        {subject}
+      </h1>
+      <p class="subtitle">{title}</p>
+    </article>
+    <article class="basic-info">
+      <h3>{school}</h3>
+      <p>Profesor: {teacher}</p>
+      <p>Alumno: {student}</p>
+      <p>{classSection}</p>
+    </article>
+  </main>
 </section>
 
 <style>
-    section{
-        display: flex;
-        flex-direction: column;
-        padding: 2rem;
-        height: 100vh;
-        gap: 400px;
-    }
-    header{
-        display: flex;
-        align-items: center;
-        gap: 0.5rem;
-        width: 100%;
-        justify-content: space-between;
-    } 
-    img{
-        height: 100px;
-    }
-    h2{
-        text-align: center;
-        width: 100%;
-        margin: 0;
-        font-size: 2rem;
-    }
-    header p{
-        font-size: 1.3rem;
-        width: 100%;
-        margin: 0;
-        color: orange;
-    }
-    h1{
-        text-align: right;
-        font-size: 3rem;
-        margin: 0;
-    }
-    main{
-        display: flex;
-        flex-direction: column;
-        gap: 2rem;
-    }
-    .title{
-        display: flex;
-        flex-direction: column;
-        gap: 1rem;
-    }
-    p.subtitle{
-        font-size: 1.5rem;
-        text-align: right;
-        color: orange;
-    }
-    .basic-info{
-        display: flex;
-        flex-direction: column;
-        gap: 0.5rem;
-    }
-    h3{
-        font-size: 1.2rem;
-        margin: 0;
-        text-align: right;
-    }
-    p{
-        font-size: 1rem;
-        margin: 0;
-        text-align: right;
-    }
+  section {
+    display: flex;
+    flex-direction: column;
+    padding: 2rem;
+    height: 100vh;
+    gap: 400px;
+  }
+  header {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    width: 100%;
+    justify-content: space-between;
+  }
+  img {
+    height: 100px;
+  }
+  h2 {
+    text-align: center;
+    width: 100%;
+    margin: 0;
+    font-size: 2rem;
+  }
+  header p {
+    font-size: 1.3rem;
+    width: 100%;
+    margin: 0;
+    color: orange;
+  }
+  h1 {
+    text-align: right;
+    font-size: 3rem;
+    margin: 0;
+  }
+  main {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+  }
+  .title {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+  p.subtitle {
+    font-size: 1.5rem;
+    text-align: right;
+    color: orange;
+  }
+  .basic-info {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+  h3 {
+    font-size: 1.2rem;
+    margin: 0;
+    text-align: right;
+  }
+  p {
+    font-size: 1rem;
+    margin: 0;
+    text-align: right;
+  }
 </style>
